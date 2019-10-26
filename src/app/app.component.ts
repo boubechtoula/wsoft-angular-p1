@@ -6,37 +6,26 @@ import { Component } from '@angular/core';
   templateUrl: './app.component.html',
   styleUrls: [ './app.component.css' ]
 })
-export class AppComponent  {
-    private isAuth : boolean = false; 
-    lastUpdate = new Date();
-    appareils = [
+export class AppComponent  {  
+    posts = [
       {
-        name: 'Machine à laver',
-        status: 'éteint'
+        titre: '1',
+        content: "votre AppComponent contiendra l'array des posts, et il le passera à un component PostListComponent",
+        creationDate :  new Date()
       },
       {
-        name: 'Frigo',
-        status: 'allumé'
+        titre: '2',
+        content: "les PostListItemComponent auront des boutons qui permettent d'augmenter et de diminuer le nombre de loveIts — cette modification aura uniquement un effet sur le component, et n'a pas besoin d'être remontée au component parent",
+        creationDate : new Date()
       },
       {
-        name: 'Ordinateur',
-        status: 'éteint'
+        titre: '3',
+        content: "chaque PostListItemComponent affichera le titre, le contenu et la date de création du post dans le template",
+        creationDate : new Date()
       }
     ];
     constructor() {
-    setTimeout(
-      () => {
-        this.isAuth = true;
-      }, 4000
-    );
+ 
   }
-  public onAllumer(): void {
-    console.log('On allume tout !');
-  }
-  public getIsAuth(): boolean{
-    return this.isAuth;
-  }
-  public setIsAuth(value : boolean) : void{
-    this.isAuth = value;
-  }
+  
 }
